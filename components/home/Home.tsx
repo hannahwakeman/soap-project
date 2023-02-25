@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import './Home.scss';
 import { ImageCarouselInput } from '../../Interfaces';
 import Stack from 'react-bootstrap/Stack';
+import TextCard from '../shared/TextCard';
 
 export default function Home(props) {
   const isMobile = props.isMobile;
@@ -56,16 +57,12 @@ export default function Home(props) {
             <ImageCarousel images={imageListTop} />
           </Col>
           <Col>
-            <div className="description">
-              <p>{text1}</p>
-            </div>
+            <TextCard textLines={[text1]} />
           </Col>
         </Row>
         <Row className="row">
           <Col>
-            <div className="description">
-              <p>{text2}</p>
-            </div>
+            <TextCard textLines={[text2]} />
           </Col>
           <Col className="imageListBottom">
             <ImageCarousel images={imageListBottom} width={'800px'} />
@@ -77,13 +74,9 @@ export default function Home(props) {
     layout = (
       <Stack gap={3} className="stack">
         <ImageCarousel images={imageListTop} />
-        <div className="description">
-          <p>{text1}</p>
-        </div>
+        <TextCard textLines={[text1]} />
         <ImageCarousel images={imageListBottom} />
-        <div className="description">
-          <p>{text2}</p>
-        </div>
+        <TextCard textLines={[text2]} />
       </Stack>
     );
   }
