@@ -1,3 +1,5 @@
+@use '../../styles/variables/colors' as *;
+
 .contact-container {
   max-width: 600px;
 }
@@ -7,6 +9,16 @@
   font-size: 25px;
 }
 
-.margin-5{
+.margin-5 {
   margin: 5px;
+}
+
+.contact-info {
+  width: 800px;
+}
+
+.accent {
+  .text-container{
+    background-color: $accent-color;
+  }
 }

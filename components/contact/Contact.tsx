@@ -8,11 +8,13 @@ export default function Contact(props) {
     <TextCard className="card" margin="5px">
       <p className="contact-header">Contact Us</p>
     </TextCard>,
-    <TextCard className="card" margin="5px">
-      <p>(315) 100-0001</p>
-      <p>contact@summerbabystudios.com</p>
-      <p>123 Soapin St, Soapville, Ny 10000</p>
-    </TextCard>,
+    <div className="accent">
+    <TextCard className="card " margin="5px">
+        <p>(315) 100-0001</p>
+        <p>contact@summerbabystudios.com</p>
+        <p>123 Soapin St, Soapville, Ny 10000</p>
+    </TextCard>
+    </div>,
     <img
       className="d-block w-100 round margin-5"
       src="https://www.soapexpressions.com/wp-content/uploads/2022/11/Soap-Making.jpg"
@@ -47,11 +49,13 @@ export default function Contact(props) {
       <Container>
         <Row className="row">
           <Col>{elements[0]}</Col>
-          <Col>{elements[1]}</Col>
+          <Col>
+            <div className="contact-info">{elements[1]}</div>
+          </Col>
         </Row>
         <Row className="row">
           <Col>{elements[2]}</Col>
-          <Col className="imageListBottom">{elements[3]}</Col>
+          <Col>{elements[3]}</Col>
         </Row>
       </Container>
     );

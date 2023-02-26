@@ -58,23 +58,26 @@ export default function Home(props) {
     <TextCard>
       <p>{text2}</p>
     </TextCard>,
-    <ImageCarousel images={imageListBottom} width={'800px'} />,
+    <ImageCarousel
+      images={imageListBottom}
+      width={!props.isMobile ? '800px' : ''}
+    />,
   ];
 
   if (!isMobile) {
     layout = (
       <div>
         {elements[0]}
-      <Container>
-        <Row className="row">
-          <Col>{elements[1]}</Col>
-          <Col>{elements[2]}</Col>
-        </Row>
-        <Row className="row">
-          <Col>{elements[3]}</Col>
-          <Col className="imageListBottom">{elements[4]}</Col>
-        </Row>
-      </Container>
+        <Container>
+          <Row className="row">
+            <Col>{elements[1]}</Col>
+            <Col>{elements[2]}</Col>
+          </Row>
+          <Row className="row">
+            <Col>{elements[3]}</Col>
+            <Col>{elements[4]}</Col>
+          </Row>
+        </Container>
       </div>
     );
   } else {

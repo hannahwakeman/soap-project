@@ -20,7 +20,7 @@ export default function ImageCarousel(props) {
     </Carousel.Item>
   ));
 
-  const width = props.width ? props.width : '100%';
+  const width = props.width ? props.width : 'auto';
 
   return (
     <Carousel className="carousel font-gelasio" style={{ width: `${width}` }}>
