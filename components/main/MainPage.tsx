@@ -23,8 +23,8 @@ export default function MainPage() {
 
   const router = createBrowserRouter([
     { path: '/', element: <Home isMobile={isMobile} /> },
-    { path: '/about', element: <About /> },
-    { path: '/contact', element: <Contact /> },
+    { path: '/about', element: <About isMobile={isMobile} /> },
+    { path: '/contact', element: <Contact isMobile={isMobile} /> },
   ]);
 
   return (

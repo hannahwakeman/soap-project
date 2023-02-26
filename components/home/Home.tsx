@@ -18,12 +18,12 @@ export default function Home(props) {
     },
     {
       imageSrc: 'https://i.ibb.co/P5dWZVY/image3.jpg',
-      label: 'Goat Soap',
-      subLabel: 'Soap from a bunch o goats',
+      label: 'More Soap',
     },
     {
       imageSrc: 'https://i.ibb.co/gRkBtBs/image1.png',
-      label: 'More Soap',
+      label: 'Goat Soap',
+      subLabel: 'Soap from a bunch o goats',
     },
   ];
 
@@ -49,34 +49,42 @@ export default function Home(props) {
 
   let layout;
 
+  let elements = [
+    <h1 className="title">Summer Baby Studios</h1>,
+    <ImageCarousel images={imageListTop} />,
+    <TextCard>
+      <p>{text1}</p>
+    </TextCard>,
+    <TextCard>
+      <p>{text2}</p>
+    </TextCard>,
+    <ImageCarousel images={imageListBottom} width={'800px'} />,
+  ];
+
   if (!isMobile) {
     layout = (
+      <div>
+        {elements[0]}
       <Container>
         <Row className="row">
-          <Col>
-            <ImageCarousel images={imageListTop} />
-          </Col>
-          <Col>
-            <TextCard textLines={[text1]} />
-          </Col>
+          <Col>{elements[1]}</Col>
+          <Col>{elements[2]}</Col>
         </Row>
         <Row className="row">
-          <Col>
-            <TextCard textLines={[text2]} />
-          </Col>
-          <Col className="imageListBottom">
-            <ImageCarousel images={imageListBottom} width={'800px'} />
-          </Col>
+          <Col>{elements[3]}</Col>
+          <Col className="imageListBottom">{elements[4]}</Col>
         </Row>
       </Container>
+      </div>
     );
   } else {
     layout = (
       <Stack gap={3} className="stack">
-        <ImageCarousel images={imageListTop} />
-        <TextCard textLines={[text1]} />
-        <ImageCarousel images={imageListBottom} />
-        <TextCard textLines={[text2]} />
+        {elements[0]}
+        {elements[1]}
+        {elements[2]}
+        {elements[3]}
+        {elements[4]}
       </Stack>
     );
   }
